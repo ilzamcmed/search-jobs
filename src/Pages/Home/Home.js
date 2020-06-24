@@ -10,7 +10,8 @@ class Home extends Component {
         super()
         this.state = {
             inputValue: "",
-            data: []
+            data: [],
+            filters: ['Todos', 'Front', 'Back', 'Design', 'Junior', 'Pleno', 'Senior']
         }
     };
 
@@ -18,16 +19,17 @@ class Home extends Component {
     componentDidMount = async () => {
         const getData = await this.props.data;
         this.setState({ data: getData })
-        console.log(this.state.data)
     };
 
     onClick = async () => {
-        const { inputValue, data } = this.state;
+        const { inputValue } = this.state;
+        const { data } = this.props;
+
         if (inputValue && data.length) {
             const result = await data.filter(item => item.position.toLowerCase().includes(inputValue.toLowerCase()));
-            console.log({ result });
-            this.setState({ inputValue: '' })
-        } else { console.log('sem input') }
+            this.setState({ inputValue: '', data: result })
+        }
+        else { console.log('sem input') }
     };
 
     onChange = (e) => {
@@ -35,20 +37,40 @@ class Home extends Component {
         this.setState({ inputValue: value })
     };
 
+    handleFilters = (e) => {
+        const { data } = this.props;
+        const value = e.target.id.toLowerCase();
+
+        const result = data.filter( item => {
+            switch(value) {
+                case 'todos':
+                    return item;
+                default:
+                    return item.position.toLowerCase().includes(value);
+                
+            }
+        })
+       
+        this.setState({data:result})
+    };
+
 
     render() {
-        const {inputValue, data} = this.state;
+        const { inputValue, data, filters } = this.state;
 
-        
+
         return (
             <GeneralTemplate>
                 <HomeContent
+                    mainTitle='Tech Jobs'
                     onChange={this.onChange}
                     type="text"
                     placeholder="O que você procura?"
                     value={inputValue}
                     data={data}
                     texto="Buscar"
+                    filters={filters}
+                    handleFilters={this.handleFilters}
                     onClick={this.onClick}
                 />
             </GeneralTemplate>
