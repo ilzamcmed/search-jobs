@@ -1,14 +1,18 @@
 import React from 'react';
 import SearchBar from '../../Molecules/SearchBar/SearchBar';
 import Card from '../../Molecules/Card/Card'
+import FilterBar from '../../Molecules/FilterBar/FilterBar';
+import MainTitle from '../../Atoms/MainTitle/MainTitle';
 
 import './HomeContent.css';
 
-const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data }) => {
+const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data, filters, handleFilters, mainTitle }) => {
     return (
 
         <main>
-            <h1>Tech Jobs</h1>
+            <MainTitle
+                mainTitle={mainTitle}
+            />
 
             <section>
                 <SearchBar
@@ -20,7 +24,10 @@ const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data 
                     onClick={onClick}
                 />
                 <div>
-                    <h2>Filtros</h2>
+                    <FilterBar
+                        filters={filters}
+                        onClick={handleFilters}
+                    />
                 </div>
             </section>
 
@@ -29,7 +36,7 @@ const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data 
                 {data ?
                     (data.map(item => {
 
-                        const {logo, company, position, postedAd, contract, location, languages, tools} = item
+                        const { logo, company, position, postedAd, contract, location, languages, tools } = item
                         return (
                             <Card
                                 logo={logo}
@@ -42,8 +49,7 @@ const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data 
                                 tools={tools}
                             />
                         )
-                    }))
-                    :  // aqui vem a negação
+                    })) :  // aqui vem a negação
                     (<h2>Nenhuma vaga encontrada</h2>)
                 }
 
