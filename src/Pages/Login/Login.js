@@ -7,17 +7,22 @@ import './Login.css';
 class Login extends Component {
     constructor() {
         super()
-        this.state={
+        this.state = {
 
         }
     }
 
+    onFinish = (value) => {
+        console.log('Dados enviados', value)
+    }
+
 
     render() {
-        return(
+        return (
             <GeneralTemplate>
                 <LoginContent
-                    mainTitle="Acesse sua conta"/>
+                    mainTitle="Acesse sua conta"
+                    onFinish={this.onFinish} />
             </GeneralTemplate>
         )
     }
