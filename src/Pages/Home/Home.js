@@ -11,7 +11,7 @@ class Home extends Component {
         this.state = {
             inputValue: "",
             data: [],
-            filters: ['Todos', 'Front', 'Back', 'Design', 'Junior', 'Pleno', 'Senior']
+            filters: ['Todos', 'Front', 'Back', 'Design', 'Junior', 'Pleno', 'Senior', 'Remoto']
         }
     };
 
@@ -45,6 +45,8 @@ class Home extends Component {
             switch(value) {
                 case 'todos':
                     return item;
+                case 'remoto':
+                    return item.location.toLowerCase().includes(value);
                 default:
                     return item.position.toLowerCase().includes(value);
                 
