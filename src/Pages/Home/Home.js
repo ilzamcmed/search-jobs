@@ -29,7 +29,7 @@ class Home extends Component {
             const result = await data.filter(item => item.position.toLowerCase().includes(inputValue.toLowerCase()));
             this.setState({ inputValue: '', data: result })
         }
-        else { console.log('sem input') }
+        
     };
 
     onChange = (e) => {
@@ -59,10 +59,11 @@ class Home extends Component {
 
     render() {
         const { inputValue, data, filters } = this.state;
+        const { logout, loggedUser} = this.props
 
 
         return (
-            <GeneralTemplate>
+            <GeneralTemplate logout={logout} loggedUser={loggedUser}>
                 <HomeContent
                     mainTitle='Tech Jobs'
                     onChange={this.onChange}

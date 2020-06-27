@@ -34,7 +34,7 @@ const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data,
             <section>
                 {/* If ternário para saber se o dado pesquisado tem no arquivo json */}
                 {data ?
-                    (data.map(item => {
+                    (data.map((item, index )=> {
 
                         const { logo, company, position, postedAd, contract, location, languages, tools } = item
                         return (
@@ -47,6 +47,7 @@ const HomeContent = ({ texto, onClick, type, placeholder, value, onChange, data,
                                 location={location}
                                 languages={languages}
                                 tools={tools}
+                                key={`${index + 1}--card`}
                             />
                         )
                     })) :  // aqui vem a negação

@@ -13,16 +13,19 @@ class Login extends Component {
     }
 
     onFinish = (value) => {
-        console.log('Dados enviados', value)
+        this.props.history.push("/");
     }
 
 
     render() {
+        const { login, loggedUser } = this.props;
+
         return (
-            <GeneralTemplate>
+            <GeneralTemplate loggedUser={loggedUser}>
                 <LoginContent
                     mainTitle="Acesse sua conta"
-                    onFinish={this.onFinish} />
+                    onFinish={this.onFinish} 
+                    login={login}/>
             </GeneralTemplate>
         )
     }

@@ -4,13 +4,16 @@ import FormLogin from '../../Molecules/FormLogin/FormLogin';
 
 import './LoginContent.css'
 
-const LoginContent = ({mainTitle, onFinish}) => {
+const LoginContent = ({ mainTitle, onFinish, login }) => {
     return (
         <main className="loginContent--container">
-             <MainTitle 
+            <MainTitle
                 mainTitle={mainTitle}
             />
-            <FormLogin onFinish={onFinish} />
+            <FormLogin
+                onFinish={onFinish}
+                login={login}
+            />
         </main>
     )
 }

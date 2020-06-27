@@ -5,15 +5,20 @@ import FormSignUp from '../../Molecules/FormSignUp/FormSignUp';
 
 import './SignUpContent.css'
 
-const SingUpContent = ({ mainTitle, onFinish }) => {
+const SignUpContent = ({ mainTitle, onFinish, login }) => {
   return (
-    <div className="singUpContent--container">
-      <MainTitle mainTitle={mainTitle} />
-      <FormSignUp onFinish={onFinish} />
+    <div className="signUpContent--container">
+      <MainTitle
+        mainTitle={mainTitle}
+      />
+      <FormSignUp
+        onFinish={onFinish}
+        login={login}
+      />
 
     </div>
 
   );
 }
 
-export default SingUpContent;
+export default SignUpContent;

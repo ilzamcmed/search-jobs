@@ -4,9 +4,9 @@ import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
 
-import './FormLogin.css';
+import './FormSignUp.css'
 
-const FormLogin = ({ onFinish, login }) => {
+const FormSignUp = ({ onFinish, login }) => {
     return (
         <Form
             name="normal_login"
@@ -16,6 +16,34 @@ const FormLogin = ({ onFinish, login }) => {
             }}
             onFinish={onFinish}
         >
+            <Form.Item
+                name="name"
+                rules={[
+                    {
+                        required: true,
+                        message: "Por favor, insira seu nome!"
+                    }
+                ]}
+            >
+                <Input
+                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    placeholder="Nome completo"
+                />
+            </Form.Item>
+            <Form.Item
+                name="email"
+                rules={[
+                    {
+                        required: true,
+                        message: "Por favor, insira seu e-mail!"
+                    }
+                ]}
+            >
+                <Input
+                    prefix={<UserOutlined className="site-form-item-icon" />}
+                    placeholder="E-mail"
+                />
+            </Form.Item>
             <Form.Item
                 name="username"
                 rules={[
@@ -48,14 +76,14 @@ const FormLogin = ({ onFinish, login }) => {
             <Form.Item></Form.Item>
 
             <Form.Item>
-                <Button onClick={login} type="primary" htmlType="submit" className="login-form-button">
-                    Entrar
-        </Button>
-                Ou <Link to="/signup">Cadastre-se!</Link>
+                <Button onClick={login} type="primary" htmlType="submit" className="login-form-button" >
+                    Cadastrar
+</Button>
+                Ou <Link to="/login">Login</Link>
             </Form.Item>
         </Form>
-    )
 
-};
+    );
+}
 
-export default FormLogin;
+export default FormSignUp;

@@ -13,17 +13,20 @@ class SignUp extends Component {
     }
 
     onFinish = (value) => {
-        console.log('Cadastrei', value)
+       
+        this.props.history.push("/");
     }
 
 
     render() {
+        const { login, loggedUser } = this.props
         return (
 
-            <GeneralTemplate >
+            <GeneralTemplate loggedUser={loggedUser} >
                 <SignUpContent
                     mainTitle='Crie uma conta'
-                    onFinish={this.onFinish} />
+                    onFinish={this.onFinish}
+                    login={login} />
             </GeneralTemplate>
 
         )
