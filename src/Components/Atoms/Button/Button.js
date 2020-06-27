@@ -4,7 +4,7 @@ import './Button.css';
 const Button = ({texto, onClick}) => {
     return(
         <div className="btn--container">
-            <button onClick={onClick}>{texto}</button>
+            <button className="searchBar--btn" onClick={onClick}>{texto}</button>
         </div>
     );
 };

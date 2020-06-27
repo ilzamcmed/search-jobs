@@ -1,0 +1,32 @@
+.filterButton--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .filterOptions--filter {
+    background-color: #edf6f5;
+    padding: 3px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .filterOptions--filter > h3 {
+    color: #64bb8b;
+    font-size: 16px;
+    margin: 0;
+    font-family: "Chivo", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .filterOptions--filter:hover,
+  .filterOptions--filter:active {
+    background-color: #64bb8b;
+  }
+  
+  .filterOptions--filter:hover > h3,
+  .filterOptions--filter:active > h3 {
+    color: white;
+  }

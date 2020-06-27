@@ -4,7 +4,7 @@ import './RoleInfos.css';
 const RoleInfos = ({ languages, tools }) => {
     return (
 
-        <div className="roleInfos--container">
+        <div className="role--infos">
 
             {languages && languages.map((linguagens, index) => {
                 return (

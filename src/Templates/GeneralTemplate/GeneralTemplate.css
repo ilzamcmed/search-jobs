@@ -1,0 +1,42 @@
+.generalTemplate--container {
+    max-width: 100vw;
+    width: 100%;
+    background-color: rgba(240, 250, 251, 0.2);
+    height: auto;
+  }
+  
+  .generalTemplate--container > nav {
+    background-color: #64bb8b;
+    width: 100%;
+  }
+  
+  nav > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav > div > svg {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  nav > div > ul {
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+  
+  nav > div > ul > a > li {
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Chivo", sans-serif;
+  }
+
+  @media screen and (max-width: 700px) {
+      
+  }

@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Chivo", sans-serif;
+    z-index: 5;
+  }
+  
+  .searchBar--btn {
+    color: white;
+    background-color: #64bb8b;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: none;
+    padding: 10px 35px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    z-index: 5;
+    font-family: "Chivo", sans-serif;
+  }
+  
+  .searchBar--btn:hover,
+  .searchBar--btn:active {
+    background-color: #498c8e;
+    font-family: "Chivo", sans-serif;
+   
+  }
+  
+  

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../Images/logo.svg'
+
 import './GeneralTemplate.css';
 
 
